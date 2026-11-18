@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<handTool type="sandboxLeash" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/handTool.xsd">
+    <storeData>
+        <name>
+            <en>Leash (rope)</en>
+            <de>Führstrick (Seil)</de>
+        </name>
+        <functions>
+            <function>A hemp rope in your hand (needs FS25_WinchTow): click a joint or a log you look at to hook it, click again to let it go. Hold the button to reel in wires laid between bridge pieces.</function>
+        </functions>
+        <image>handTools/leash/store_leash.dds</image>
+        <price>25</price>
+        <lifetime>1000</lifetime>
+        <dailyUpkeep>0</dailyUpkeep>
+        <showInStore>true</showInStore>
+        <rotation>0</rotation>
+        <brand>NONE</brand>
+        <species>HANDTOOL</species>
+        <category>SANDBOX_TOOLS</category>
+        <canBeSold>true</canBeSold>
+    </storeData>
+
+    <!-- the tool has no model of its own: the rope you see is the winch's (FS25_WinchTow draws it from the hand node); the hand placement is the horse leash's -->
+    <base>
+        <typeDesc>Leash</typeDesc>
+        <filename>handTools/leash/leash.i3d</filename>
+        <graphics node="graphics" lockFirstPerson="true"/>
+        <handNode node="handNode"/>
+        <firstPersonNode node="firstPersonNode"/>
+    </base>
+
+    <storable>
+        <holderType type="HANDTOOL" node="graphics"/>
+    </storable>
+
+    <i3dMappings>
+        <i3dMapping id="graphics" node="0>0" />
+        <i3dMapping id="handNode" node="0>1" />
+        <i3dMapping id="firstPersonNode" node="0>2" />
+    </i3dMappings>
+</handTool>

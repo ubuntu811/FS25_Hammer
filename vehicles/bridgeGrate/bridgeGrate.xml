@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="bridgeGrate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
+    <annotation>Bridge grate (FS25_Hammer), made by tools/make_selling_plate.py.</annotation>
+
+    <storeData>
+        <name>
+            <en>Bridge grate</en>
+        </name>
+        <functions>
+            <function>A flat iron grid with two towing eyes (orange) at one end and two hitches (green) at the other: hitch grates end to end (a tractor's hitch, or the hand winch: hook a joint, the fitting one of the next grate is chosen for you) and fix the outer ones, or the two end pieces, with the Sandbox Hammer to span a gap. Every hitch is a blue link ring hooked on a U lug: it swings and has a little leeway, so the pieces need not lie flush on uneven ground. The game's attach joins two grates with one joint, a second joint of ours takes the other pair: two points hold a grate level for a tractor. Left Shift and a click with the hand winch unhitches.</function>
+        </functions>
+        <image>vehicles/bridgeGrate/store_bridgeGrate.dds</image>
+        <price>900</price>
+        <lifetime>1000</lifetime>
+        <category>SANDBOX_WORKS</category>
+        <brand>NONE</brand>
+        <showInStore>true</showInStore>
+        <canBeSold>true</canBeSold>
+        <allowLeasing>false</allowLeasing>
+        <financeCategory>OTHER</financeCategory>
+        <vertexBufferMemoryUsage>0</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>0</indexBufferMemoryUsage>
+        <textureMemoryUsage>0</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+        <storeIconRendering>
+            <settings cameraXRot="-35" cameraYRot="35" />
+        </storeIconRendering>
+        <audioMemoryUsage>0</audioMemoryUsage>
+    </storeData>
+
+    <base>
+        <typeDesc>Bridge grate</typeDesc>
+        <filename>vehicles/bridgeGrate/bridgeGrate.i3d</filename>
+        <size width="3.2" length="4.4" height="0.3" lengthOffset="0"/>
+        <canBeReset>true</canBeReset>
+        <supportsPickUp>true</supportsPickUp>
+        <components maxMass="4000">
+            <component centerOfMass="0 0.06 0" solverIterationCount="10" mass="500"/>
+            <component centerOfMass="0 0 0" solverIterationCount="30" mass="40"/>
+            <component centerOfMass="0 0 0" solverIterationCount="30" mass="40"/>
+            <joint component1="1" component2="2" node="ringJoint1" rotLimit="80 25 25" transLimit="0.02 0.025 0.025" enableCollision="false"/>
+            <joint component1="1" component2="3" node="ringJoint2" rotLimit="80 25 25" transLimit="0.02 0.025 0.025" enableCollision="false"/>
+        </components>
+        <showInVehicleMenu>true</showInVehicleMenu>
+        <mapHotspot available="false" />
+        <input allowed="false"/>
+    </base>
+
+    <!-- the hitches at the rear end sit on the link rings (bodies of their own, hooked on the lug bars by the component joints above): a ring swings freely about its bar and has a little leeway, so pieces need not lie flush on uneven ground -->
+    <attacherJoints>
+        <attacherJoint node="hitch1" jointType="trailer" lowerRotLimit="80 25 25" lowerTransLimit="0.02 0.025 0.025" lockDownTransLimit="false" allowsJointLimitMovement="false" />
+        <attacherJoint node="hitch2" jointType="trailer" lowerRotLimit="80 25 25" lowerTransLimit="0.02 0.025 0.025" lockDownTransLimit="false" allowsJointLimitMovement="false" />
+        <attacherJoint node="latch1" jointType="winchLatch" />
+        <attacherJoint node="latch2" jointType="winchLatch" />
+        <attacherJoint node="latch3" jointType="winchLatch" />
+        <attacherJoint node="latch4" jointType="winchLatch" />
+    </attacherJoints>
+
+    <attachable>
+        <inputAttacherJoints>
+            <inputAttacherJoint node="attacherJoint1" jointType="trailer" attacherHeight="0.3" />
+            <inputAttacherJoint node="attacherJoint2" jointType="trailer" attacherHeight="0.3" />
+            <inputAttacherJoint node="lift1" jointType="wheelLoader" hardAttach="true" />
+            <inputAttacherJoint node="lift2" jointType="telehandler" hardAttach="true" />
+            <inputAttacherJoint node="lift3" jointType="bigBag" />
+        </inputAttacherJoints>
+    </attachable>
+
+    <i3dMappings>
+        <i3dMapping id="bridgeGrate_main_component1" node="0>" />
+        <i3dMapping id="attacherJoint1" node="0>1" />
+        <i3dMapping id="attacherJoint2" node="0>2" />
+        <i3dMapping id="lift1" node="0>3" />
+        <i3dMapping id="lift2" node="0>4" />
+        <i3dMapping id="lift3" node="0>5" />
+        <i3dMapping id="ringJoint1" node="0>6" />
+        <i3dMapping id="hitch1" node="1>1" />
+        <i3dMapping id="ringJoint2" node="0>7" />
+        <i3dMapping id="hitch2" node="2>1" />
+        <i3dMapping id="latch1" node="0>8" />
+        <i3dMapping id="latch2" node="0>9" />
+        <i3dMapping id="latch3" node="0>10" />
+        <i3dMapping id="latch4" node="0>11" />
+        <i3dMapping id="lock" node="0>12" />
+    </i3dMappings>
+</vehicle>

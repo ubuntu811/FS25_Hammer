@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="92">
+    <author>RealName</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en>FS25 Sandbox Hammer</en>
+    </title>
+    <description>
+        <en>A multi-tool configuration to bundle timber logs and toggle physics object states.</en>
+    </description>
+    <iconFilename>handTools/sandbox_tools.dds</iconFilename>
+    <multiplayer supported="true"/>
+    <l10n filenamePrefix="l10n/l10n"/>
+
+    <actions>
+        <action name="BINOCULARS_ZOOM_ALT_WHEEL" category="ONFOOT" axisType="FULL"/>
+        <action name="SANDBOX_HAMMER_BIND" category="ONFOOT" axisType="HALF"/>
+        <action name="SANDBOX_HAMMER_ROTATE" category="ONFOOT" axisType="HALF"/>
+        <action name="SANDBOX_TOOL_PICKER" category="ONFOOT" axisType="HALF"/>
+        <action name="SANDBOX_TOOL_SLOT_1" category="ONFOOT" axisType="HALF"/>
+        <action name="SANDBOX_TOOL_SLOT_2" category="ONFOOT" axisType="HALF"/>
+        <action name="SANDBOX_TOOL_SLOT_3" category="ONFOOT" axisType="HALF"/>
+        <action name="SANDBOX_TOOL_SLOT_4" category="ONFOOT" axisType="HALF"/>
+        <action name="SANDBOX_TOOL_SLOT_5" category="ONFOOT" axisType="HALF"/>
+        <action name="SANDBOX_TOOL_SLOT_6" category="ONFOOT" axisType="HALF"/>
+        <action name="SANDBOX_TOOL_SLOT_7" category="ONFOOT" axisType="HALF"/>
+        <action name="SANDBOX_TOOL_SLOT_8" category="ONFOOT" axisType="HALF"/>
+        <action name="SANDBOX_TOOL_SLOT_9" category="ONFOOT" axisType="HALF"/>
+        <action name="SANDBOX_TOOL_SLOT_10" category="ONFOOT" axisType="HALF"/>
+    </actions>
+
+    <inputBinding>
+        <actionBinding action="BINOCULARS_ZOOM_ALT_WHEEL">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_equals" axisComponent="+" neutralInput="0" index="1"/>
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_minus" axisComponent="-" neutralInput="0" index="1"/>
+        </actionBinding>
+        <actionBinding action="SANDBOX_HAMMER_BIND">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_b"/>
+        </actionBinding>
+        <actionBinding action="SANDBOX_HAMMER_ROTATE">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_r"/>
+        </actionBinding>
+        <actionBinding action="SANDBOX_TOOL_PICKER">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_1"/>
+        </actionBinding>
+        <actionBinding action="SANDBOX_TOOL_SLOT_1">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_1"/>
+        </actionBinding>
+        <actionBinding action="SANDBOX_TOOL_SLOT_2">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_2"/>
+        </actionBinding>
+        <actionBinding action="SANDBOX_TOOL_SLOT_3">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_3"/>
+        </actionBinding>
+        <actionBinding action="SANDBOX_TOOL_SLOT_4">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_4"/>
+        </actionBinding>
+        <actionBinding action="SANDBOX_TOOL_SLOT_5">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_5"/>
+        </actionBinding>
+        <actionBinding action="SANDBOX_TOOL_SLOT_6">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_6"/>
+        </actionBinding>
+        <actionBinding action="SANDBOX_TOOL_SLOT_7">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_7"/>
+        </actionBinding>
+        <actionBinding action="SANDBOX_TOOL_SLOT_8">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_8"/>
+        </actionBinding>
+        <actionBinding action="SANDBOX_TOOL_SLOT_10">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lalt KEY_0"/>
+        </actionBinding>
+    </inputBinding>
+
+    <extraSourceFiles>
+        <sourceFile filename="scripts/addStoreCategory.lua"/>
+        <sourceFile filename="scripts/handTools/ToolSlots.lua"/>
+        <sourceFile filename="scripts/handTools/ToolPicker.lua"/>
+        <sourceFile filename="scripts/vehicles/BridgeBake.lua"/>
+    </extraSourceFiles>
+    <storeItems>
+        <storeItem xmlFilename="handTools/sandboxHammer/hammer.xml"/>
+        <storeItem xmlFilename="handTools/binoculars/binoculars.xml"/>
+        <storeItem xmlFilename="handTools/leash/leash.xml"/>
+        <storeItem xmlFilename="vehicles/sellingPlate/sellingPlate.xml"/>
+        <storeItem xmlFilename="vehicles/bridgeGrate/bridgeGrate.xml"/>
+        <storeItem xmlFilename="vehicles/bridgeStart/bridgeStart.xml"/>
+        <storeItem xmlFilename="vehicles/bridgeEnd/bridgeEnd.xml"/>
+        <storeItem xmlFilename="vehicles/bridgeGrate/bridgeGrate_placeable.xml"/>
+        <storeItem xmlFilename="vehicles/bridgeStart/bridgeStart_placeable.xml"/>
+        <storeItem xmlFilename="vehicles/bridgeEnd/bridgeEnd_placeable.xml"/>
+        <storeItem xmlFilename="vehicles/winchPole/winchPole.xml"/>
+        <storeItem xmlFilename="vehicles/winchAnchor/winchAnchor.xml"/>
+    </storeItems>
+    <!-- the selling plate: its own vehicle type, only the base vehicle plus attachable (hitch eyes) and the station: no engine, folding, lights or power takeoff specializations that ask for a running engine -->
+    <jointTypes>
+        <jointType name="winchLatch"/>
+    </jointTypes>
+
+    <specializations>
+        <specialization name="sellingPlate" className="SellingPlate" filename="scripts/vehicles/SellingPlate.lua"/>
+        <specialization name="bridgeLink" className="BridgeLink" filename="scripts/vehicles/BridgeLink.lua"/>
+    </specializations>
+    <vehicleTypes>
+        <type name="sellingPlate" parent="base" filename="$dataS/scripts/vehicles/Vehicle.lua">
+            <specialization name="attachable"/>
+            <specialization name="sellingPlate"/>
+        </type>
+        <type name="bridgeGrate" parent="base" filename="$dataS/scripts/vehicles/Vehicle.lua">
+            <specialization name="attachable"/>
+            <specialization name="attacherJoints"/>
+            <specialization name="bridgeLink"/>
+        </type>
+        <type name="bridgeStart" parent="base" filename="$dataS/scripts/vehicles/Vehicle.lua">
+            <specialization name="attachable"/>
+            <specialization name="attacherJoints"/>
+            <specialization name="bridgeLink"/>
+        </type>
+        <type name="bridgeEnd" parent="base" filename="$dataS/scripts/vehicles/Vehicle.lua">
+            <specialization name="attachable"/>
+            <specialization name="attacherJoints"/>
+            <specialization name="bridgeLink"/>
+        </type>
+        <type name="winchPole" parent="base" filename="$dataS/scripts/vehicles/Vehicle.lua">
+            <specialization name="attacherJoints"/>
+        </type>
+        <type name="winchAnchor" parent="base" filename="$dataS/scripts/vehicles/Vehicle.lua">
+            <specialization name="attacherJoints"/>
+        </type>
+    </vehicleTypes>
+    <!-- 1. Formally links your code file to a concrete class definition name -->
+    <handToolSpecializations>
+        <specialization name="sandboxHammer" filename="scripts/handTools/specializations/HandToolHammer.lua" className="HandToolHammer"/>
+        <specialization name="binoculars" filename="scripts/handTools/specializations/HandToolBinoculars.lua" className="HandToolBinoculars"/>
+        <specialization name="sandboxLeash" filename="scripts/handTools/specializations/HandToolSandboxLeash.lua" className="HandToolSandboxLeash"/>
+    </handToolSpecializations>
+    <handToolTypes>
+        <type name="sandboxHammer" parent="base" filename="$dataS/scripts/handTools/HandTool.lua">
+            <specialization name="sandboxHammer"/>
+        </type>
+        <type name="binoculars" parent="base" filename="$dataS/scripts/handTools/HandTool.lua">
+            <specialization name="binoculars"/>
+        </type>
+        <type name="sandboxLeash" parent="base" filename="$dataS/scripts/handTools/HandTool.lua">
+            <specialization name="sandboxLeash"/>
+        </type>
+    </handToolTypes>
+    <storeCategories>
+        <storeCategory type="HANDTOOLS" name="SANDBOX_TOOLS" title="Sandbox Engineering" image="handTools/sandbox_tools.dds" insertAfter="flashlights"/>
+        <storeCategory type="OBJECTS" name="SANDBOX_WORKS" title="$l10n_category_sandboxWorks" image="vehicles/sellingPlate/store_sellingPlate.dds"/>
+        <storeCategory type="HANDTOOLS" name="FS25_HAMMER_BINOCULARS" title="$l10n_category_binoculars" image="handTools/binoculars/store_binoculars.dds" insertAfter="SANDBOX_TOOLS"/>
+    </storeCategories>
+</modDesc>

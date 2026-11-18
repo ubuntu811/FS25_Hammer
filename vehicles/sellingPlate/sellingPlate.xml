@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="sellingPlate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
+    <annotation>Selling plate (FS25_Hammer), made by tools/make_selling_plate.py.</annotation>
+
+    <storeData>
+        <name>
+            <en>Selling plate</en>
+        </name>
+        <functions>
+            <function>A flat iron grid that buys crops, pallets, bales and logs, at the base-game prices. Drag it into place by one of its three towing eyes (a tractor's hitch or a winch), then fix it where it lies with the Sandbox Hammer: it only buys while it is frozen.</function>
+        </functions>
+        <image>vehicles/sellingPlate/store_sellingPlate.dds</image>
+        <price>2500</price>
+        <lifetime>1000</lifetime>
+        <category>SANDBOX_WORKS</category>
+        <brand>NONE</brand>
+        <showInStore>true</showInStore>
+        <canBeSold>true</canBeSold>
+        <allowLeasing>false</allowLeasing>
+        <financeCategory>OTHER</financeCategory>
+        <vertexBufferMemoryUsage>0</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>0</indexBufferMemoryUsage>
+        <textureMemoryUsage>0</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+        <storeIconRendering>
+            <settings cameraXRot="-35" cameraYRot="35" />
+        </storeIconRendering>
+        <audioMemoryUsage>0</audioMemoryUsage>
+    </storeData>
+
+    <base>
+        <typeDesc>Selling plate</typeDesc>
+        <filename>vehicles/sellingPlate/sellingPlate.i3d</filename>
+        <size width="3.2" length="4.4" height="0.3" lengthOffset="0"/>
+        <canBeReset>true</canBeReset>
+        <supportsPickUp>true</supportsPickUp>
+        <components maxMass="2000">
+            <component centerOfMass="0 0.06 0" solverIterationCount="10" mass="800"/>
+        </components>
+        <showInVehicleMenu>true</showInVehicleMenu>
+        <mapHotspot available="false" />
+        <input allowed="false"/>
+    </base>
+
+    <attachable>
+        <inputAttacherJoints>
+            <inputAttacherJoint node="attacherJoint1" jointType="trailer" attacherHeight="0.3" />
+            <inputAttacherJoint node="attacherJoint2" jointType="trailer" attacherHeight="0.3" />
+            <inputAttacherJoint node="attacherJoint3" jointType="trailer" attacherHeight="0.3" />
+        </inputAttacherJoints>
+    </attachable>
+
+    <!-- the station: what trailers (the exact fill node), pallets and bales on the plate sell, at the base-game prices; it only buys while the plate is frozen (SellingPlate.lua) -->
+    <sellingPlate>
+        <sellingStation stationName="Selling plate" appearsOnStats="true" litersForFullPriceDrop="200000" fullPriceRecoverHours="48" supportsExtension="false">
+            <unloadTrigger exactFillRootNode="exactFillRootNode" fillTypeCategories="SELLINGSTATION_FIELDFRUITS SELLINGSTATION_BALES" fillTypesExclude="FORAGE" />
+            <palletTrigger triggerNode="palletTrigger" fillTypeCategories="SELLINGSTATION_PRODUCTS SELLINGSTATION_PRODUCTSFOOD" fillTypes="WOOL POTATO BEETROOT CARROT PARSNIP" fillTypesExclude="FORAGE" />
+            <baleTrigger triggerNode="baleTrigger" deleteLitersPerSecond="10000" fillTypeCategories="SELLINGSTATION_BALES" fillTypesExclude="FORAGE" />
+            <woodTrigger triggerNode="woodTrigger" activationTriggerNode="woodSellPlayerTrigger" fillTypes="WOOD" />
+        </sellingStation>
+    </sellingPlate>
+
+    <i3dMappings>
+        <i3dMapping id="sellingPlate_main_component1" node="0>" />
+        <i3dMapping id="exactFillRootNode" node="0>1" />
+        <i3dMapping id="palletTrigger" node="0>2" />
+        <i3dMapping id="baleTrigger" node="0>3" />
+        <i3dMapping id="woodTrigger" node="0>4" />
+        <i3dMapping id="woodSellPlayerTrigger" node="0>5" />
+        <i3dMapping id="attacherJoint1" node="0>6" />
+        <i3dMapping id="attacherJoint2" node="0>7" />
+        <i3dMapping id="attacherJoint3" node="0>8" />
+    </i3dMappings>
+</vehicle>

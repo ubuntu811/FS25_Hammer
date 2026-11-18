@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="binoculars.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="10.0.11"/>
+  </Asset>
+
+  <Files>
+    <File fileId="1" filename="textures/binoculars_diffuse.dds"/>
+    <File fileId="2" filename="textures/binoculars_normal.dds"/>
+    <File fileId="3" filename="textures/binoculars_specular.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="binoculars" materialId="32">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="binoculars.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="binocularsRoot" nodeId="8">
+      <TransformGroup name="binoculars" clipDistance="50" nodeId="9">
+        <TransformGroup name="none" nodeId="10"/>
+        <Shape name="binoculars" translation="-0.451969 0.390559 0.0892777" rotation="-0.214418 5.7574 -2.13644" shapeId="1" nodeId="19" castsShadows="true" receiveShadows="true" distanceBlending="false" materialIds="32"/>
+        <TransformGroup name="handNode" translation="-0.593647 0.545715 0.0861148" rotation="-90 0 90" nodeId="12"/>
+        <TransformGroup name="firstPersonNode" translation="-0.899 0.548293 -0.088623" rotation="0 85 0" nodeId="13"/>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+</i3D>

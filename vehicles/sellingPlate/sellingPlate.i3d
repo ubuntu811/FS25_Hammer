@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="sellingPlate" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="make_selling_plate.py" version="1"/>
+  </Asset>
+  <Files/>
+  <Materials>
+    <Material name="iron" materialId="1" diffuseColor="0.30 0.31 0.33 1" specularColor="0.45 0.45 0.45"/>
+    <Material name="eye" materialId="2" diffuseColor="0.85 0.42 0.05 1" specularColor="0.3 0.3 0.3"/>
+    <Material name="groove" materialId="3" diffuseColor="0.11 0.115 0.125 1" specularColor="0.15 0.15 0.15"/>
+    <Material name="paint" materialId="4" diffuseColor="0.92 0.92 0.88 1" specularColor="0.2 0.2 0.2"/>
+  </Materials>
+  <Shapes externalShapesFile="sellingPlate.i3d.shapes">
+  </Shapes>
+  <Scene>
+    <Shape name="sellingPlate_main_component1" shapeId="2" dynamic="true" compound="true" density="0.0005" collisionFilterGroup="0x10004" collisionFilterMask="0xfe3ffb83" linearDamping="0.1" angularDamping="0.5" staticFriction="0.8" dynamicFriction="0.6" castsShadows="false" receiveShadows="false" nonRenderable="true" materialIds="1" clipDistance="300" nodeId="1">
+      <Shape name="sellingPlate_vis" shapeId="1" castsShadows="true" receiveShadows="true" materialIds="1,2,3,4" clipDistance="300" nodeId="2"/>
+      <Shape name="exactFillRootNode" translation="0 0.132 0" shapeId="3" kinematic="true" compound="true" collisionFilterGroup="0x40000000" collisionFilterMask="0x20000000" castsShadows="false" receiveShadows="false" nonRenderable="true" materialIds="1" nodeId="3"/>
+      <Shape name="palletTrigger" translation="0 1.620 0" shapeId="4" kinematic="true" compound="true" trigger="true" collisionFilterGroup="0x20000000" collisionFilterMask="0x10000" castsShadows="false" receiveShadows="false" nonRenderable="true" materialIds="1" nodeId="4"/>
+      <Shape name="baleTrigger" translation="0 1.620 0" shapeId="4" kinematic="true" compound="true" trigger="true" collisionFilterGroup="0x20000000" collisionFilterMask="0x50000" castsShadows="false" receiveShadows="false" nonRenderable="true" materialIds="1" nodeId="5"/>
+      <Shape name="woodTrigger" translation="0 1.620 0" shapeId="4" kinematic="true" compound="true" trigger="true" collisionFilterGroup="0x20000000" collisionFilterMask="0x800" castsShadows="false" receiveShadows="false" nonRenderable="true" materialIds="1" nodeId="6"/>
+      <Shape name="woodSellPlayerTrigger" translation="0 1.0 0" shapeId="5" kinematic="true" compound="true" trigger="true" collisionFilterGroup="0x20000000" collisionFilterMask="0x100000" castsShadows="false" receiveShadows="false" nonRenderable="true" materialIds="1" nodeId="7"/>
+      <TransformGroup name="attacherJoint1" translation="-1.000 0.070 2.130" nodeId="10"/>
+      <TransformGroup name="attacherJoint2" translation="0.000 0.070 2.130" nodeId="11"/>
+      <TransformGroup name="attacherJoint3" translation="1.000 0.070 2.130" nodeId="12"/>
+    </Shape>
+  </Scene>
+
+</i3D>

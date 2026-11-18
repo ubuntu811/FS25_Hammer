@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<l10n>
+    <texts>
+        <text name="storeItem_binoculars" text="Binoculars"/>
+        <text name="category_binoculars" text="Binoculars"/>
+        <text name="category_sandboxWorks" text="Sandbox Works"/>
+        <text name="function_binoculars" text="Observe distant objects by holding the use button to zoom in."/>
+        <text name="action_useBinoculars" text="Look through binoculars"/>
+        <text name="input_BINOCULARS_ZOOM_ALT_WHEEL_1" text="Binoculars zoom in"/>
+        <text name="input_BINOCULARS_ZOOM_ALT_WHEEL_2" text="Binoculars zoom out"/>
+        <text name="input_SANDBOX_HAMMER_BIND" text="Hammer: set bind target / bind"/>
+        <text name="input_SANDBOX_HAMMER_ROTATE" text="Hammer: rotate 90 degrees around target"/>
+        <text name="input_SANDBOX_TOOL_PICKER" text="Hand tool picker (tiles)"/>
+        <text name="input_SANDBOX_TOOL_SLOT_1" text="Hand tool slot 1"/>
+        <text name="input_SANDBOX_TOOL_SLOT_2" text="Hand tool slot 2"/>
+        <text name="input_SANDBOX_TOOL_SLOT_3" text="Hand tool slot 3"/>
+        <text name="input_SANDBOX_TOOL_SLOT_4" text="Hand tool slot 4"/>
+        <text name="input_SANDBOX_TOOL_SLOT_5" text="Hand tool slot 5"/>
+        <text name="input_SANDBOX_TOOL_SLOT_6" text="Hand tool slot 6"/>
+        <text name="input_SANDBOX_TOOL_SLOT_7" text="Hand tool slot 7"/>
+        <text name="input_SANDBOX_TOOL_SLOT_8" text="Hand tool slot 8"/>
+        <text name="input_SANDBOX_TOOL_SLOT_9" text="Hand tool slot 9"/>
+        <text name="input_SANDBOX_TOOL_SLOT_10" text="Hand tool slot 10"/>
+    </texts>
+</l10n>

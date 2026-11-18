@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="bridgeEnd_static" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="make_selling_plate.py" version="1"/>
+  </Asset>
+  <Files/>
+  <Materials>
+    <Material name="iron" materialId="1" diffuseColor="0.30 0.31 0.33 1" specularColor="0.45 0.45 0.45"/>
+    <Material name="eye" materialId="2" diffuseColor="0.85 0.42 0.05 1" specularColor="0.3 0.3 0.3"/>
+    <Material name="hitch" materialId="3" diffuseColor="0.10 0.62 0.25 1" specularColor="0.3 0.3 0.3"/>
+    <Material name="groove" materialId="4" diffuseColor="0.11 0.115 0.125 1" specularColor="0.15 0.15 0.15"/>
+    <Material name="link" materialId="5" diffuseColor="0.16 0.30 0.78 1" specularColor="0.5 0.5 0.5"/>
+    <Material name="latch" materialId="6" diffuseColor="0.95 0.78 0.05 1" specularColor="0.3 0.3 0.3"/>
+    <Material name="paint" materialId="7" diffuseColor="0.92 0.92 0.88 1" specularColor="0.2 0.2 0.2"/>
+    <Material name="lift" materialId="8" diffuseColor="0.78 0.08 0.08 1" specularColor="0.35 0.35 0.35"/>
+  </Materials>
+  <Shapes externalShapesFile="bridgeEnd.i3d.shapes">
+  </Shapes>
+  <Scene>
+    <TransformGroup name="bridgeEnd_static" nodeId="1">
+      <TransformGroup name="clearAreas" nodeId="2">
+        <TransformGroup name="clearArea1Start" translation="-1.500 0 -0.800" nodeId="3">
+          <TransformGroup name="clearArea1Width" translation="3.000 0 0" nodeId="4"/>
+          <TransformGroup name="clearArea1Height" translation="0 0 1.600" nodeId="5"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="testAreas" nodeId="6">
+        <TransformGroup name="testArea1Start" translation="-1.500 0 -0.800" nodeId="7">
+          <TransformGroup name="testArea1End" translation="3.000 0 1.600" nodeId="8"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="mesh" nodeId="9">
+        <Shape name="bridgeEnd_vis" shapeId="1" static="true" castsShadows="true" receiveShadows="true" materialIds="1,2,3,4,6,7,8" clipDistance="300" nodeId="10"/>
+        <Shape name="col" shapeId="2" static="true" density="0" collisionFilterGroup="0x3e" collisionFilterMask="0xfffffbff" castsShadows="false" receiveShadows="false" nonRenderable="true" materialIds="1" nodeId="11"/>
+        <Shape name="ring1" translation="0.000 0.070 -0.885" shapeId="4" static="true" castsShadows="true" receiveShadows="true" materialIds="5" clipDistance="300" nodeId="12"/>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+</i3D>

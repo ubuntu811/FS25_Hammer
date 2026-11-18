@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+<title>Mouse holding funnel - engraving vector</title>
+<g fill="none" stroke="#000" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+<!-- tail --> <path d="M205 450 C120 510 70 455 87 398 C99 357 157 349 171 380 C182 405 155 420 137 403 C119 430 166 458 215 425"/>
+<!-- body --> <path d="M267 319 C213 341 189 403 210 467 C225 514 276 527 335 508 C392 493 416 454 393 392"/>
+<!-- head --> <path d="M229 305 C189 286 178 237 194 180 C211 118 270 74 339 78 C412 83 461 132 464 207 C467 260 438 303 396 326"/>
+<!-- ear --> <path d="M222 205 C188 166 138 175 117 213 C96 251 119 303 163 309 C194 313 218 293 230 272"/><path stroke-width="8" d="M207 235 C176 209 141 221 138 252 C137 272 153 286 175 285"/>
+<!-- eyes --> <path stroke-width="9" d="M283 216 Q302 186 324 215 M379 197 Q396 173 411 197"/>
+<!-- nose and smile --> <path stroke-width="8" d="M354 237 Q370 220 388 238 Q374 258 354 237 Z M371 255 Q372 289 344 283 Q329 279 325 269 M371 260 Q391 286 410 265"/>
+<!-- whiskers --> <path stroke-width="6" d="M324 258 Q270 258 240 269 M324 268 Q277 280 250 302 M416 241 L480 220 M418 255 L490 254 M415 270 L475 290"/>
+<!-- feet --> <path d="M244 488 Q218 512 252 523 L310 523 Q328 514 307 494 M341 495 Q356 524 390 523 Q431 524 426 505 Q421 490 391 487"/><path stroke-width="6" d="M273 504 L279 516 M289 501 L296 515 M385 500 L395 513"/>
+<!-- funnel wide mouth --> <ellipse cx="438" cy="328" rx="112" ry="31" transform="rotate(9 438 328)"/><ellipse cx="438" cy="328" rx="90" ry="17" transform="rotate(9 438 328)" stroke-width="7"/>
+<!-- funnel cone and spout --> <path d="M330 316 L404 428 L392 481 Q401 494 420 492 L440 431 L546 347"/>
+<!-- arms gripping funnel --> <path d="M266 351 Q295 392 343 391 Q373 387 375 406 Q374 423 357 424 Q304 423 272 395"/><path d="M428 399 Q448 378 466 398 Q483 422 463 441 Q441 453 428 432"/><path stroke-width="6" d="M349 404 L360 410 M444 410 L454 417"/>
+</g></svg>

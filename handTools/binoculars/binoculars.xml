@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<handTool type="binoculars" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../bin/shared/xml/schema/handTool.xsd">
+    <storeData>
+        <name>$l10n_storeItem_binoculars</name>
+        <functions>
+            <function>$l10n_function_binoculars</function>
+        </functions>
+        <image>handTools/binoculars/store_binoculars.dds</image>
+        <price>250</price>
+        <lifetime>1000</lifetime>
+        <dailyUpkeep>0</dailyUpkeep>
+        <showInStore>true</showInStore>
+        <rotation>0</rotation>
+        <brand>NONE</brand>
+        <species>HANDTOOL</species>
+        <category>FS25_HAMMER_BINOCULARS</category>
+        <canBeSold>true</canBeSold>
+        <vertexBufferMemoryUsage>0</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>0</indexBufferMemoryUsage>
+        <textureMemoryUsage>0</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+
+    <base runMultiplier="1" canCrouch="true">
+        <filename>handTools/binoculars/binoculars.i3d</filename>
+        <graphics node="binoculars" lockFirstPerson="true"/>
+        <handNode node="handNode"/>
+        <firstPersonNode node="firstPersonNode"/>
+    </base>
+
+    <binoculars zoomFov="12" transitionSpeed="10">
+        <overlay filename="hud/hudBinocularsOverlay.dds"/>
+        <variableZoom minFov="5" maxFov="22" step="1" direction="both"/>
+    </binoculars>
+	
+	<!-- zoomFov="12": стартовое приближение при нажатии ЛКМ.
+	minFov="5": максимальное приближение. Чем меньше число, тем сильнее zoom.
+	maxFov="24": минимальное приближение в режиме бинокля.
+	step="1": шаг колеса.
+	direction="both": колесо работает в обе стороны. -->
+	<!-- Доступные варианты -->
+	<!-- in: только сильнее приближать от значения zoomFov.
+	out: только ослаблять приближение от значения zoomFov.
+	both: приближать и отдалять в заданном диапазоне. -->
+	<!-- <variableZoom minFov="5" maxFov="24" step="1" direction="both"/>
+	<variableZoom minFov="5" step="1" direction="in"/>
+	<variableZoom maxFov="24" step="1" direction="out"/> -->
+
+    <i3dMappings>
+        <i3dMapping id="binocularsRoot" node="0>"/>
+        <i3dMapping id="binoculars" node="0>0"/>
+        <i3dMapping id="body" node="0>0|1"/>
+        <i3dMapping id="handNode" node="0>0|2"/>
+        <i3dMapping id="firstPersonNode" node="0>0|3"/>
+    </i3dMappings>
+</handTool>

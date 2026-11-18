@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="bridgeStart" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
+    <annotation>Bridge start piece (FS25_Hammer), made by tools/make_selling_plate.py.</annotation>
+
+    <storeData>
+        <name>
+            <en>Bridge start piece</en>
+        </name>
+        <functions>
+            <function>The short grate for the near bank of a bridge: two hitches (green) for the first bridge grate, and one iron ring (orange) at the other end to drag the whole assembly from. Pin it with the Sandbox Hammer, then hitch the first bridge grate to it. Free it weighs like a grate (you can drag it); pinned with the Hammer it becomes 3 t on purpose, so the bridge hanging off it cannot pull it off the bank.</function>
+        </functions>
+        <image>vehicles/bridgeStart/store_bridgeStart.dds</image>
+        <price>400</price>
+        <lifetime>1000</lifetime>
+        <category>SANDBOX_WORKS</category>
+        <brand>NONE</brand>
+        <showInStore>true</showInStore>
+        <canBeSold>true</canBeSold>
+        <allowLeasing>false</allowLeasing>
+        <financeCategory>OTHER</financeCategory>
+        <vertexBufferMemoryUsage>0</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>0</indexBufferMemoryUsage>
+        <textureMemoryUsage>0</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+        <storeIconRendering>
+            <settings cameraXRot="-35" cameraYRot="35" />
+        </storeIconRendering>
+        <audioMemoryUsage>0</audioMemoryUsage>
+    </storeData>
+
+    <base>
+        <typeDesc>Bridge start piece</typeDesc>
+        <filename>vehicles/bridgeStart/bridgeStart.i3d</filename>
+        <size width="3.2" length="2.0" height="0.3" lengthOffset="0"/>
+        <canBeReset>true</canBeReset>
+        <supportsPickUp>true</supportsPickUp>
+        <components maxMass="40000">
+            <component centerOfMass="0 0.06 0" solverIterationCount="10" mass="600"/>
+            <component centerOfMass="0 0 0" solverIterationCount="30" mass="40"/>
+            <component centerOfMass="0 0 0" solverIterationCount="30" mass="40"/>
+            <joint component1="1" component2="2" node="ringJoint1" rotLimit="80 25 25" transLimit="0.02 0.025 0.025" enableCollision="false"/>
+            <joint component1="1" component2="3" node="ringJoint2" rotLimit="80 25 25" transLimit="0.02 0.025 0.025" enableCollision="false"/>
+        </components>
+        <showInVehicleMenu>true</showInVehicleMenu>
+        <mapHotspot available="false" />
+        <input allowed="false"/>
+    </base>
+
+    <!-- the hitches at the rear end sit on the link rings (bodies of their own, hooked on the lug bars by the component joints above): a ring swings freely about its bar and has a little leeway, so pieces need not lie flush on uneven ground -->
+    <attacherJoints>
+        <attacherJoint node="hitch1" jointType="trailer" lowerRotLimit="80 25 25" lowerTransLimit="0.02 0.025 0.025" lockDownTransLimit="false" allowsJointLimitMovement="false" />
+        <attacherJoint node="hitch2" jointType="trailer" lowerRotLimit="80 25 25" lowerTransLimit="0.02 0.025 0.025" lockDownTransLimit="false" allowsJointLimitMovement="false" />
+        <attacherJoint node="latch1" jointType="winchLatch" />
+        <attacherJoint node="latch2" jointType="winchLatch" />
+    </attacherJoints>
+
+    <attachable>
+        <inputAttacherJoints>
+            <inputAttacherJoint node="attacherJoint1" jointType="trailer" attacherHeight="0.3" />
+            <inputAttacherJoint node="lift1" jointType="wheelLoader" hardAttach="true" />
+            <inputAttacherJoint node="lift2" jointType="telehandler" hardAttach="true" />
+            <inputAttacherJoint node="lift3" jointType="bigBag" />
+        </inputAttacherJoints>
+    </attachable>
+
+    <i3dMappings>
+        <i3dMapping id="bridgeStart_main_component1" node="0>" />
+        <i3dMapping id="attacherJoint1" node="0>1" />
+        <i3dMapping id="lift1" node="0>2" />
+        <i3dMapping id="lift2" node="0>3" />
+        <i3dMapping id="lift3" node="0>4" />
+        <i3dMapping id="ringJoint1" node="0>5" />
+        <i3dMapping id="hitch1" node="1>1" />
+        <i3dMapping id="ringJoint2" node="0>6" />
+        <i3dMapping id="hitch2" node="2>1" />
+        <i3dMapping id="latch1" node="0>7" />
+        <i3dMapping id="latch2" node="0>8" />
+    </i3dMappings>
+</vehicle>

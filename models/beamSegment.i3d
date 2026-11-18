@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="beamSegment" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="make_beam_segment.py" version="1"/>
+  </Asset>
+  <Files/>
+  <Materials>
+    <Material name="steel" materialId="1" diffuseColor="0.20 0.21 0.24 1" specularColor="0.6 0.6 0.6"/>
+  </Materials>
+  <Shapes externalShapesFile="beamSegment.i3d.shapes">
+  </Shapes>
+  <Scene>
+    <TransformGroup name="beam" nodeId="1">
+      <Shape name="beamRoot" shapeId="1" kinematic="true" compound="true" collisionFilterGroup="0x2" collisionFilterMask="0xfe3ffb83" castsShadows="false" receiveShadows="false" nonRenderable="true" materialIds="1" clipDistance="300" nodeId="2"/>
+      <Shape name="beamChild" shapeId="1" compoundChild="true" collisionFilterGroup="0x2" collisionFilterMask="0xfe3ffb83" castsShadows="false" receiveShadows="false" nonRenderable="true" materialIds="1" clipDistance="300" nodeId="3"/>
+      <Shape name="beamVisual" shapeId="2" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="300" nodeId="4"/>
+    </TransformGroup>
+  </Scene>
+
+</i3D>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="winchAnchor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
+    <annotation>Winch anchor (FS25_Hammer), made by tools/make_winch_pole.py.</annotation>
+
+    <storeData>
+        <name>
+            <en>Winch anchor</en>
+        </name>
+        <functions>
+            <function>A small iron plate with one winch latch (yellow), an upright ring standing right on the plate, flat on the ground: the anchor for a guy line or a winch pull where a pole is too much. Light enough to carry in your hands (the hands tool takes up to 200 kg), or drag it by the orange eye: lay it where you want it, and pin it with the Sandbox Hammer: four bolt heads appear, it weighs 3 t, cannot be lifted and does not move. Only a winch takes the latch (the tractor's winch rope, the hand winch).</function>
+        </functions>
+        <image>vehicles/winchAnchor/store_winchAnchor.dds</image>
+        <price>120</price>
+        <lifetime>1000</lifetime>
+        <category>SANDBOX_WORKS</category>
+        <brand>NONE</brand>
+        <showInStore>true</showInStore>
+        <canBeSold>true</canBeSold>
+        <allowLeasing>false</allowLeasing>
+        <financeCategory>OTHER</financeCategory>
+        <vertexBufferMemoryUsage>0</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>0</indexBufferMemoryUsage>
+        <textureMemoryUsage>0</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+        <storeIconRendering>
+            <settings cameraXRot="-25" cameraYRot="35" />
+        </storeIconRendering>
+        <audioMemoryUsage>0</audioMemoryUsage>
+    </storeData>
+
+    <base>
+        <typeDesc>Winch anchor</typeDesc>
+        <filename>vehicles/winchAnchor/winchAnchor.i3d</filename>
+        <size width="0.9" length="1.1" height="0.3" lengthOffset="0"/>
+        <canBeReset>true</canBeReset>
+        <supportsPickUp>true</supportsPickUp>
+        <components maxMass="4000">
+            <component centerOfMass="0 0.08 0" solverIterationCount="10" mass="60"/>
+        </components>
+        <showInVehicleMenu>true</showInVehicleMenu>
+        <mapHotspot available="false" />
+        <input allowed="false"/>
+    </base>
+
+    <!-- the winch latches: only a winch takes them (joint type winchLatch of FS25_Hammer) -->
+    <attacherJoints>
+        <attacherJoint node="latch1" jointType="winchLatch" />
+    </attacherJoints>
+
+    <i3dMappings>
+        <i3dMapping id="winchAnchor_main_component1" node="0>" />
+        <i3dMapping id="latch1" node="0>1" />
+        <i3dMapping id="bolts" node="0>2" />
+    </i3dMappings>
+</vehicle>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<handTool type="sandboxHammer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/handTool.xsd">
+    <storeData>
+        <name>
+            <en>The Sandbox Hammer</en></name>
+        <functions>
+            <function>Fix objects to the landscape.</function>
+        </functions>
+        <image>handTools/sandboxHammer/hammer.dds</image>
+        <price>45</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>NONE</brand>
+        <category>SANDBOX_TOOLS</category>
+        <species>HANDTOOL</species>
+    </storeData>
+    <base mass="2.0" canCrouch="true" runMultiplier="1.0">
+        <typeDesc>Sandbox Utility Tool</typeDesc>
+        <filename>handTools/sandboxHammer/hammer.i3d</filename>
+        <graphics node="hammerAsset" lockFirstPerson="true"/>
+        <handNode node="handNode" useLeftHand="false"/>
+        <firstPersonNode node="firstPersonNode"/>
+    </base>
+    <storable>
+        <holderType type="HANDTOOL" node="hammerAsset"/>
+    </storable>
+
+    <i3dMappings>
+        <i3dMapping id="hammerRoot" node="0>"/>
+        <i3dMapping id="hammer" node="0>0"/>
+        <i3dMapping id="hammerAsset" node="0>0|0"/>
+        <i3dMapping id="handNode" node="0>0|1"/>
+        <i3dMapping id="firstPersonNode" node="0>0|2"/>
+    </i3dMappings>
+</handTool>

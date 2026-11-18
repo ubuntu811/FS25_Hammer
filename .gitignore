@@ -1,0 +1,9 @@
+# recordings and build output do not belong in the repo
+assets/*.mp4
+build/.build_staging/
+build/.deploy_stage/
+build/*.zip
+build/*.patch
+assets/*.zip
+__pycache__/
+*.pyc
